@@ -5,320 +5,197 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>d-Briefs — Case Brief Gallery</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f5f5f5;
+            background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
         }
         
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header - Matches Casebriefr */
-        header {
-            background: white;
-            border-bottom: 2px solid #2c3e50;
-            padding: 40px 0;
+        .landing-container {
+            max-width: 700px;
             text-align: center;
+            color: white;
         }
         
         .brand-name {
-            font-size: 42px;
+            font-size: 56px;
             font-weight: 700;
-            color: #2c3e50;
             letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
         
         .brand-name span {
             font-weight: 300;
         }
         
-        .tagline {
-            color: #666;
-            font-size: 18px;
-            margin-top: 10px;
+        .brand-tagline {
+            font-size: 20px;
             font-weight: 300;
+            margin-bottom: 20px;
+            opacity: 0.9;
         }
         
         .wordplay {
             font-size: 14px;
-            color: #888;
-            margin-top: 8px;
+            opacity: 0.7;
+            margin-bottom: 40px;
             font-style: italic;
         }
         
-        /* Main Content */
-        main {
-            padding: 60px 0;
-        }
-        
-        .section {
-            background: white;
-            border-radius: 4px;
-            padding: 40px;
-            margin-bottom: 30px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        }
-        
-        .section h2 {
-            color: #2c3e50;
-            font-size: 24px;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #e2e8f0;
-        }
-        
-        .section p {
-            margin-bottom: 15px;
+        .description {
             font-size: 16px;
-            color: #4a5568;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            opacity: 0.95;
         }
         
-        /* Workflow Cards */
-        .workflow {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin: 30px 0;
+        .button-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
         }
         
-        .workflow-card {
-            padding: 30px;
+        .cta-button {
+            display: inline-block;
+            padding: 16px 40px;
+            background: white;
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
             border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+        
+        .cta-button.secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .cta-button.secondary:hover {
+            background: rgba(255,255,255,0.1);
+        }
+        
+        .section-title {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 20px;
             text-align: center;
         }
         
-        .workflow-card.workshop {
-            background: #edf2f7;
-            border: 2px solid #cbd5e0;
+        .briefly-speaking {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            backdrop-filter: blur(10px);
         }
         
-        .workflow-card.gallery {
-            background: #2c3e50;
-            color: white;
-            border: 2px solid #2c3e50;
+        .workflow-text {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            opacity: 0.95;
         }
         
-        .workflow-card h3 {
-            font-size: 24px;
-            margin-bottom: 8px;
+        .features {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            text-align: left;
         }
         
-        .workflow-card .role {
+        .feature {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .feature h3 {
             font-size: 14px;
-            opacity: 0.8;
-            margin-bottom: 15px;
+            margin-bottom: 8px;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
         
-        .workflow-card p {
-            color: inherit;
-            opacity: 0.9;
-        }
-        
-        /* Gallery Preview */
-        .gallery-preview {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-        
-        .brief-card {
-            background: #f7fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 4px;
-            padding: 20px;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        
-        .brief-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        
-        .brief-card .citation {
-            font-weight: 600;
-            color: #2c3e50;
-            font-size: 14px;
-            margin-bottom: 8px;
-        }
-        
-        .brief-card .case-name {
-            font-size: 18px;
-            color: #1a202c;
-            margin-bottom: 8px;
-        }
-        
-        .brief-card .court {
+        .feature p {
             font-size: 13px;
-            color: #718096;
+            opacity: 0.85;
+            line-height: 1.5;
         }
         
-        /* CTA */
-        .cta {
-            text-align: center;
-            margin-top: 30px;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 14px 32px;
-            background: #2c3e50;
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: 600;
-            transition: background 0.2s;
-        }
-        
-        .btn:hover {
-            background: #1a252f;
-        }
-        
-        .btn-secondary {
-            background: #718096;
-            margin-left: 10px;
-        }
-        
-        .btn-secondary:hover {
-            background: #4a5568;
-        }
-        
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 40px 0;
-            color: #718096;
-            font-size: 14px;
-        }
-        
-        footer a {
-            color: #2c3e50;
-            text-decoration: none;
-        }
-        
-        footer a:hover {
-            text-decoration: underline;
-        }
-        
-        /* Responsive */
         @media (max-width: 600px) {
             .brand-name {
-                font-size: 32px;
+                font-size: 40px;
             }
-            
-            .workflow {
+            .features {
                 grid-template-columns: 1fr;
             }
-            
-            .section {
-                padding: 25px;
-            }
-            
-            .gallery-preview {
-                grid-template-columns: 1fr;
+            .button-group {
+                flex-direction: column;
+                align-items: center;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="brand-name">d-BRIEF<span>S</span></div>
-            <p class="tagline">Case Brief Gallery</p>
-            <p class="wordplay">A place to debrief — review, reflect, and reference your case work</p>
-        </div>
-    </header>
-    
-    <main>
-        <div class="container">
-            <!-- The Concept -->
-            <div class="section">
-                <h2 style="text-align: center;">Briefly Speaking</h2>
-                <p style="text-align: center;">Every case deserves a good briefer. First, you wrestle with the analysis in the Casebriefr. Then, you debrief off the record — stepping back to review, reflect, and curate your growing reference library.</p>
-                
-                <div class="workflow">
-                    <div class="workflow-card workshop">
-                        <h3>Casebriefr</h3>
-                        <p class="role">The Workshop</p>
-                        <p>Create, edit, and perfect your case briefs with structured templates and professional formatting.</p>
-                    </div>
-                    <div class="workflow-card gallery">
-                        <h3>d-Briefs</h3>
-                        <p class="role">The Gallery</p>
-                        <p>Your curated collection — browse past briefs, recognize patterns in citations, and build your legal reference.</p>
-                    </div>
-                </div>
-            </div>
+    <div class="landing-container">
+        <h1 class="brand-name">d-BRIEF<span>S</span></h1>
+        <p class="brand-tagline">Case Brief Gallery</p>
+        <p class="wordplay">A place to debrief — review, reflect, and reference your case work</p>
+        
+        <div class="briefly-speaking">
+            <h2 class="section-title">Briefly Speaking</h2>
+            <p class="workflow-text">
+                Every case deserves a good briefer. First, you wrestle with the analysis in the Casebriefr. 
+                Then, you debrief off the record — stepping back to review, reflect, and curate your growing reference library.
+            </p>
             
-            <!-- Featured Briefs -->
-            <div class="section">
-                <h2>Off the Record</h2>
-                <p>A curated selection from the gallery. Click any brief to view the full analysis.</p>
-                
-                <div class="gallery-preview">
-                    <div class="brief-card">
-                        <div class="citation">393 Mass. 564 (1984)</div>
-                        <div class="case-name">Commonwealth v. Hine</div>
-                        <div class="court">Massachusetts Supreme Judicial Court</div>
-                    </div>
-                    
-                    <div class="brief-card">
-                        <div class="citation">5 U.S. (1 Cranch) 137 (1803)</div>
-                        <div class="case-name">Marbury v. Madison</div>
-                        <div class="court">U.S. Supreme Court</div>
-                    </div>
-                    
-                    <div class="brief-card">
-                        <div class="citation">404 Mass. 160 (1989)</div>
-                        <div class="case-name">Sullivan v. Rooney</div>
-                        <div class="court">Massachusetts Supreme Judicial Court</div>
-                    </div>
-                    
-                    <div class="brief-card">
-                        <div class="citation">945 F. Supp. 2d 216 (D. Mass. 2013)</div>
-                        <div class="case-name">United States v. Swartz</div>
-                        <div class="court">U.S. District Court (D. Mass.)</div>
-                    </div>
-                </div>
-                
-                <div class="cta">
-                    <a href="https://casebriefr.com/template.html" class="btn">Create a Brief</a>
-                    <a href="https://casebriefr.com" class="btn btn-secondary">Visit Casebriefr</a>
-                </div>
-            </div>
-            
-            <!-- About -->
-            <div class="section">
-                <h2>About d-Briefs</h2>
-                <p>d-Briefs is your post-research destination — where briefs go after they've been crafted in Casebriefr. This gallery serves as:</p>
-                
-                <ul style="margin: 20px 0 20px 30px; color: #4a5568;">
-                    <li style="margin-bottom: 10px;"><strong>Quick Reference:</strong> Instantly recognize and retrieve past case citations</li>
-                    <li style="margin-bottom: 10px;"><strong>Pattern Library:</strong> Build familiarity with frequently cited cases and legal principles</li>
-                    <li style="margin-bottom: 10px;"><strong>Portfolio:</strong> Showcase selected briefs for study, review, or collaboration</li>
-                    <li style="margin-bottom: 10px;"><strong>Archive:</strong> Save and organize completed research for future reference</li>
-                </ul>
-                
-                <p style="margin-top: 20px;">Future features: Save partially completed briefs from Casebriefr, advanced search by jurisdiction or legal topic, and export options for your personal legal research database.</p>
+            <div class="button-group">
+                <a href="https://casebriefr.com" class="cta-button">Casebriefr</a>
+                <a href="gallery.html" class="cta-button secondary">View Gallery</a>
             </div>
         </div>
-    </main>
-    
-    <footer>
-        <div class="container">
-            <p>d-Briefs — A gallery for case brief research</p>
-            <p>Create briefs at <a href="https://casebriefr.com">Casebriefr</a> · Browse them here</p>
-            <p style="margin-top: 15px; font-size: 12px;">Data provided by the <a href="https://case.law">Caselaw Access Project</a>, Harvard Law School Library Innovation Lab</p>
+        
+        <div class="features">
+            <div class="feature">
+                <h3>Curated</h3>
+                <p>A hand-picked collection of case briefs for study and reference.</p>
+            </div>
+            <div class="feature">
+                <h3>Searchable</h3>
+                <p>Easily find past cases by citation, court, or topic.</p>
+            </div>
+            <div class="feature">
+                <h3>Connected</h3>
+                <p>Seamlessly linked to Casebriefr for creating new briefs.</p>
+            </div>
         </div>
-    </footer>
+    </div>
 </body>
 </html>
