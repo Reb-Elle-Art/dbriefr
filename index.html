@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>d-Briefs — Draft Case Briefs for Legal Research</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: #f7fafc;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: #4a5568;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+        
+        header .tagline {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        /* Main Content */
+        main {
+            padding: 60px 0;
+        }
+        
+        .section {
+            background: white;
+            border-radius: 8px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .section h2 {
+            color: #4a5568;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        
+        .section p {
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+        
+        /* Concept Cards */
+        .concept-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .concept-card {
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .concept-card.draft {
+            background: #edf2f7;
+            border: 2px solid #cbd5e0;
+        }
+        
+        .concept-card.polished {
+            background: #2c3e50;
+            color: white;
+            border: 2px solid #2c3e50;
+        }
+        
+        .concept-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .concept-card .role {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 15px;
+        }
+        
+        /* Features */
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .feature-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .feature-list li::before {
+            content: "✓";
+            color: #48bb78;
+            font-weight: bold;
+            margin-right: 12px;
+        }
+        
+        /* CTA Button */
+        .cta {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: #2c3e50;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        
+        .btn:hover {
+            background: #1a252f;
+        }
+        
+        .btn-secondary {
+            background: #4a5568;
+            margin-left: 10px;
+        }
+        
+        .btn-secondary:hover {
+            background: #2d3748;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #718096;
+            font-size: 0.9rem;
+        }
+        
+        footer a {
+            color: #4a5568;
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Responsive */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .concept-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>d-Briefs</h1>
+            <p class="tagline">Draft Case Briefs for Legal Research</p>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <!-- Concept Section -->
+            <div class="section">
+                <h2>The Concept</h2>
+                <p>Not every brief needs to be perfect. d-Briefs is where case analysis begins — a workspace for working through legal questions, extracting key information, and developing your understanding before polishing.</p>
+                
+                <div class="concept-grid">
+                    <div class="concept-card draft">
+                        <h3>d-Briefs</h3>
+                        <p class="role">The Workshop</p>
+                        <p>Draft documents, working notes, research-phase analysis</p>
+                    </div>
+                    <div class="concept-card polished">
+                        <h3>Casebriefr</h3>
+                        <p class="role">The Gallery</p>
+                        <p>Polished briefs, presentation-ready, final output</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Casebriefr Showcase -->
+            <div class="section">
+                <h2>Meet Casebriefr</h2>
+                <p>When your analysis is ready for presentation, <strong>Casebriefr</strong> provides a professional template for creating structured, print-ready case briefs.</p>
+                
+                <ul class="feature-list">
+                    <li>Structured IRAC format (Issue, Rule, Analysis, Conclusion)</li>
+                    <li>Print-optimized layout for paper or PDF</li>
+                    <li>Editable fields — work directly in your browser</li>
+                    <li>Professional design suitable for class or court</li>
+                    <li>Helpful prompts for each section</li>
+                </ul>
+                
+                <div class="cta">
+                    <a href="https://casebriefr.com/template.html" class="btn">Try Casebriefr</a>
+                    <a href="https://casebriefr.com" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+            
+            <!-- The Workflow -->
+            <div class="section">
+                <h2>The Workflow</h2>
+                <p><strong>Start messy, end polished.</strong></p>
+                <p>Use d-Briefs (this workspace) for your initial case analysis — rough notes, extracted headnotes, working hypotheses. When you're ready to create a final, presentable brief, move to Casebriefr.</p>
+                <p>Both tools share the same DNA: they're built for legal research workflows, with CAP (Caselaw Access Project) integration for fetching case data directly.</p>
+            </div>
+            
+            <!-- Future -->
+            <div class="section">
+                <h2>Roadmap</h2>
+                <p><strong>Now:</strong> Landing page and concept documentation</p>
+                <p><strong>Next:</strong> Web-based case browser and CAP tools</p>
+                <p><strong>Future:</strong> Online editor and seamless Casebriefr integration</p>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>d-Briefs — A workspace for legal research</p>
+            <p>Sister project to <a href="https://casebriefr.com">Casebriefr</a></p>
+            <p style="margin-top: 15px; font-size: 0.8rem;">Data provided by the <a href="https://case.law">Caselaw Access Project</a>, Harvard Law School Library Innovation Lab</p>
+        </div>
+    </footer>
+</body>
+</html>
