@@ -1,21 +1,12 @@
 [
   {
     "id": "me-v-the-world",
-    "citation": "991 S.W.2d 873 (Tex. App. 1999)",
+    "citation": "Citation not provided",
     "caseName": "Me v. The World",
-    "court": "Basketball Court",
-    "snippet": "A test brief submitted via the new Submit to d-Brief button.",
+    "court": "Court not specified",
+    "snippet": "Brief submitted via Casebriefr",
     "dateAdded": "2026-03-17",
     "filename": "Me-v-The-World.html"
-  },
-  {
-    "id": "commonwealth-v-hine",
-    "citation": "393 Mass. 564 (1984)",
-    "caseName": "Commonwealth v. Hine",
-    "court": "Massachusetts Supreme Judicial Court",
-    "snippet": "Analysis of reasonable doubt instructions and jury deliberation procedures in criminal cases.",
-    "dateAdded": "2024-03-10",
-    "filename": "2026-03-10_Hine-v-Commonwealth.html"
   },
   {
     "id": "marbury-v-madison",
@@ -45,15 +36,6 @@
     "filename": "2026-03-11_United-States-v-Swartz.html"
   },
   {
-    "id": "roberts-v-healey",
-    "citation": "11 Mass. App. Ct. 959 (1981)",
-    "caseName": "Roberts v. Healey",
-    "court": "Massachusetts Appeals Court",
-    "snippet": "Administrative law case concerning agency authority and the standard of review for administrative decisions.",
-    "dateAdded": "2024-03-10",
-    "filename": "2026-03-10_Roberts-v-Healey.html"
-  },
-  {
     "id": "brock-v-commonwealth",
     "citation": "Record No. 0756-94-3 (Va. Ct. App. 1995)",
     "caseName": "Brock v. Commonwealth",
@@ -61,5 +43,23 @@
     "snippet": "Criminal procedure case addressing sufficiency of evidence and appellate review standards.",
     "dateAdded": "2024-03-11",
     "filename": "2026-03-11_Brock-v-Commonwealth.html"
+  },
+  {
+    "id": "commonwealth-v-hine",
+    "citation": "393 Mass. 564 (1984)",
+    "caseName": "Commonwealth v. Hine",
+    "court": "Massachusetts Supreme Judicial Court",
+    "snippet": "Analysis of reasonable doubt instructions and jury deliberation procedures in criminal cases.",
+    "dateAdded": "2024-03-10",
+    "filename": "2026-03-10_Hine-v-Commonwealth.html"
+  },
+  {
+    "id": "roberts-v-healey",
+    "citation": "11 Mass. App. Ct. 959 (1981)",
+    "caseName": "Roberts v. Healey",
+    "court": "Massachusetts Appeals Court",
+    "snippet": "Administrative law case concerning agency authority and the standard of review for administrative decisions.",
+    "dateAdded": "2024-03-10",
+    "filename": "2026-03-10_Roberts-v-Healey.html"
   }
 ]
