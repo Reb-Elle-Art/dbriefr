@@ -5,120 +5,191 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Casebriefr - Sullivan v. Rooney</title>
     <style>
-        /* ===== BASE STYLES ===== */
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f5f5f5; padding: 20px; line-height: 1.6; }
-        .container { max-width: 850px; margin: 0 auto; background: white; padding: 40px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .brand-header { text-align: center; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 2px solid #2c3e50; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .brand-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #2c3e50;
+        }
         .brand-name { font-size: 32px; font-weight: 700; color: #2c3e50; letter-spacing: 1px; }
         .brand-tagline { color: #666; font-size: 14px; margin-top: 5px; }
-        h1.screen-only { text-align: center; color: #1a1a1a; margin-bottom: 10px; font-size: 24px; text-transform: uppercase; letter-spacing: 2px; }
+        h1 {
+            text-align: center;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            font-size: 24px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
         .subtitle { text-align: center; color: #666; font-size: 14px; margin-bottom: 30px; }
-        .form-section { margin-bottom: 25px; border: 1px solid #ddd; border-radius: 4px; overflow: hidden; }
-        .section-header { background: #2c3e50; color: white; padding: 12px 15px; font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
-        .section-content { padding: 15px; }
+        .form-section {
+            margin-bottom: 25px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .section-header {
+            background: #2c3e50;
+            color: white;
+            padding: 12px 15px;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .section-content { padding: 20px; }
         .form-row { display: flex; gap: 20px; margin-bottom: 15px; }
         .form-group { flex: 1; }
-        .form-group.full-width { width: 100%; }
-        label { display: block; margin-bottom: 5px; color: #333; font-weight: 500; font-size: 13px; }
-        input[type="text"], input[type="date"], textarea { width: 100%; padding: 10px 12px; border: 1px solid #ccc; border-radius: 3px; font-size: 14px; font-family: inherit; transition: border-color 0.2s; }
-        input[type="text"]:focus, input[type="date"]:focus, textarea:focus { outline: none; border-color: #2c3e50; }
-        textarea { resize: vertical; min-height: 80px; }
-        textarea.large { min-height: 120px; }
-        .hint { font-size: 11px; color: #888; margin-top: 4px; }
-        .button-row { display: flex; justify-content: center; gap: 15px; margin-top: 30px; }
-        .print-btn, .submit-btn { padding: 12px 24px; border: none; border-radius: 4px; font-size: 14px; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; transition: background 0.2s; }
-        .print-btn { background: #2c3e50; color: white; }
-        .print-btn:hover { background: #1a252f; }
-        .submit-btn { background: #e74c3c; color: white; }
-        .submit-btn:hover { background: #c0392b; }
-        .brand-footer { text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd; color: #888; font-size: 12px; }
-        .print-only { display: none; }
-        .print-header { text-align: center; margin-bottom: 30pt; padding-bottom: 15pt; border-bottom: 2pt solid #000; }
-        .print-case-name { font-size: 18pt; font-weight: bold; font-style: italic; margin-bottom: 8pt; text-align: center; }
-        .print-case-meta { font-size: 11pt; color: #333; text-align: center; }
-        .print-case-meta span:not(:empty)::after { content: " | "; color: #999; }
-        .print-case-meta span:last-child::after { content: ""; }
-        .print-briefed-by { font-size: 10pt; color: #666; text-align: center; margin-top: 8pt; font-style: italic; }
-        .print-section { margin-bottom: 20pt; }
-        .print-section-title { font-size: 12pt; font-weight: bold; text-transform: uppercase; letter-spacing: 1pt; margin-bottom: 8pt; margin-top: 15pt; border-bottom: 1pt solid #000; padding-bottom: 3pt; }
-        .print-content { white-space: pre-wrap; word-wrap: break-word; font-family: 'Times New Roman', Times, serif; font-size: 12pt; line-height: 1.5; }
+        .form-group.full-width { flex: 2; }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+            font-weight: 500;
+            font-size: 13px;
+        }
+        input[type="text"],
+        input[type="date"],
+        textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 14px;
+            font-family: inherit;
+        }
+        textarea { min-height: 120px; resize: vertical; }
+        textarea.large { min-height: 200px; }
+        textarea.xlarge { min-height: 300px; }
+        .hint {
+            font-size: 12px;
+            color: #888;
+            margin-top: 5px;
+            font-style: italic;
+        }
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+        button {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .btn-print {
+            background: #2c3e50;
+            color: white;
+        }
+        .btn-print:hover { background: #1a252f; }
+        .source-note {
+            background: #f8f9fa;
+            border-left: 3px solid #2c3e50;
+            padding: 10px 15px;
+            margin-top: 20px;
+            font-size: 12px;
+            color: #666;
+        }
         @media print {
             body { background: white; padding: 0; }
-            .container { box-shadow: none; padding: 0; max-width: 100%; }
-            .brand-header, .button-row, .brand-footer, .screen-only, .form-section, h1.screen-only, .subtitle { display: none !important; }
-            .print-only { display: block !important; }
-            .print-section { break-inside: avoid; page-break-inside: avoid; }
-            .print-content { orphans: 3; widows: 3; }
-        }
-        @media (max-width: 600px) {
-            .form-row { flex-direction: column; gap: 15px; }
-            .container { padding: 20px; }
-            .brand-name { font-size: 28px; }
-            .button-row { flex-direction: column; align-items: center; }
+            .container { box-shadow: none; max-width: 100%; padding: 20px; }
+            .screen-only { display: none !important; }
+            .button-group { display: none !important; }
+            textarea { border: none; resize: none; }
+            input { border: none; background: transparent; }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="brand-header">
-            <div class="brand-name">Casebriefr</div>
-            <div class="brand-tagline">Professional Legal Case Briefing Tool</div>
+            <div class="brand-name">CASEBRIEF<span style="font-weight:300;">R</span></div>
+            <div class="brand-tagline">Legal Case Brief Generator</div>
         </div>
         
         <h1 class="screen-only">Case Brief</h1>
-        <p class="subtitle screen-only">Trusts - Constructive Trust / Fiduciary Duty</p>
+        <p class="subtitle screen-only">Generated from Caselaw Access Project</p>
         
-        <!-- Case Identification -->
+        <!-- Case Information -->
         <div class="form-section">
-            <div class="section-header">Case Identification</div>
+            <div class="section-header">Case Information</div>
             <div class="section-content">
                 <div class="form-row">
-                    <div class="form-group">
+                    <div class="form-group full-width">
                         <label for="case-name">Case Name</label>
                         <input type="text" id="case-name" name="case_name" value="Sullivan v. Rooney">
                     </div>
-                    <div class="form-group">
-                        <label for="citation">Citation</label>
-                        <input type="text" id="citation" name="citation" value="404 Mass. 160 (1989)">
-                    </div>
                 </div>
                 <div class="form-row">
+                    <div class="form-group">
+                        <label for="citation">Citation</label>
+                        <input type="text" id="citation" name="citation" value="404 Mass. 160">
+                    </div>
                     <div class="form-group">
                         <label for="court">Court</label>
                         <input type="text" id="court" name="court" value="Massachusetts Supreme Judicial Court">
                     </div>
-                    <div class="form-group">
-                        <label for="date">Date Decided</label>
-                        <input type="text" id="date" name="date_decided" value="February 16, 1989">
-                    </div>
                 </div>
                 <div class="form-row">
+                    <div class="form-group">
+                        <label for="date">Date Decided</label>
+                        <input type="date" id="date" name="date_decided" value="1989-02-16">
+                    </div>
                     <div class="form-group">
                         <label for="judge">Judge / Author</label>
                         <input type="text" id="judge" name="judge" value="Wilkins, J.">
                     </div>
-                    <div class="form-group">
-                        <label for="briefed-by">Briefed By</label>
-                        <input type="text" id="briefed-by" name="briefed_by" value="Zoe">
+                </div>
+                <div class="form-row">
+                    <div class="form-group full-width">
+                        <label for="attorneys">Attorneys</label>
+                        <input type="text" id="attorneys" name="attorneys" value=" Francis T. Talty (Michael H. Arwe with him) for the defendant. Anne L. Berger for the plaintiff. ">
                     </div>
                 </div>
             </div>
         </div>
         
-        <!-- Facts -->
+        <!-- CAP Headnotes / Summary -->
         <div class="form-section">
-            <div class="section-header">Facts</div>
+            <div class="section-header">CAP Headnotes & Summary</div>
             <div class="section-content">
-                <div class="form-group full-width">
-                    <label for="facts">Relevant Facts</label>
-                    <textarea id="facts" name="facts" class="large">[Extract key facts from the case text that led to the legal dispute]
-
-This case involves an action between two unmarried persons who had formerly lived together as if husband and wife. The plaintiff sought to establish her interest in a certain house, title to which was held by the defendant alone.
-
-See full case text for complete facts.</textarea>
-                    <p class="hint">Focus on facts material to the court's decision</p>
-                </div>
+                <label for="headnotes">Official Headnotes (from Caselaw Access Project)</label>
+                <textarea id="headnotes" name="headnotes" class="xlarge" readonly> 
+ Trust, Constructive trust. Fiduciary.
+ 
+ In an action between two unmarried persons who had formerly lived together as if husband and wife, wherein the plaintiff sought to establish her interest in a certain house, title to which was held by the husband alone, the judge’s unchallenged findings demonstrating that the defendant had violated a fiduciary duty to the plaintiff called for the imposition of a constructive trust, in her favor, of a one-half interest in the house. [163-164]
+ Civil action commenced in the Middlesex Division of the Probate &amp; Family Court Department on October 4, 1984.</textarea>
+                <p class="hint">These headnotes are provided by CAP and may help identify the issue, holding, and procedural history</p>
+            </div>
+        </div>
+        
+        <!-- Relevant Facts -->
+        <div class="form-section">
+            <div class="section-header">Relevant Facts</div>
+            <div class="section-content">
+                <label for="facts">Facts</label>
+                <textarea id="facts" name="facts" class="large">[Extract key facts from the case text that led to the legal dispute]</textarea>
+                <p class="hint">Focus on facts material to the court's decision</p>
             </div>
         </div>
         
@@ -126,25 +197,19 @@ See full case text for complete facts.</textarea>
         <div class="form-section">
             <div class="section-header">Procedural History</div>
             <div class="section-content">
-                <div class="form-group full-width">
-                    <label for="procedural-history">Procedural Posture</label>
-                    <textarea id="procedural-history" name="procedural_history" class="large">Civil action commenced in the Middlesex Division of the Probate & Family Court Department on October 4, 1984.
-
-The judge's unchallenged findings demonstrated that the defendant had violated a fiduciary duty to the plaintiff, which called for the imposition of a constructive trust in her favor of a one-half interest in the house.</textarea>
-                    <p class="hint">Trace the case's path through the judicial system</p>
-                </div>
+                <label for="procedural">How the case reached this court</label>
+                <textarea id="procedural" name="procedural" class="large">[Use CAP headnotes above and case text to document: lower court decisions, appeals, motions, etc.]</textarea>
+                <p class="hint">Lower court decisions, appeals, procedural posture when it reached this court</p>
             </div>
         </div>
         
-        <!-- Issue(s) -->
+        <!-- Issue -->
         <div class="form-section">
             <div class="section-header">Issue(s)</div>
             <div class="section-content">
-                <div class="form-group full-width">
-                    <label for="issues">Legal Question(s) Presented</label>
-                    <textarea id="issues" name="issues" class="large">[Frame as question(s) - e.g., "Whether the defendant's violation of fiduciary duty warrants imposition of a constructive trust..."]</textarea>
-                    <p class="hint">Write in question format. Include all sub-issues if applicable.</p>
-                </div>
+                <label for="issue">Legal question(s) the court addressed</label>
+                <textarea id="issue" name="issue" class="large">[Frame as question(s) - e.g., "Whether the defendant's Fourth Amendment rights were violated..."]</textarea>
+                <p class="hint">Start with "Whether..." or "Does..."</p>
             </div>
         </div>
         
@@ -152,10 +217,9 @@ The judge's unchallenged findings demonstrated that the defendant had violated a
         <div class="form-section">
             <div class="section-header">Holding</div>
             <div class="section-content">
-                <div class="form-group full-width">
-                    <label for="holding">Court's Decision</label>
-                    <textarea id="holding" name="holding">[Direct answer to the issue - what did the court decide?]</textarea>
-                </div>
+                <label for="holding">The court's decision</label>
+                <textarea id="holding" name="holding" class="large">[Direct answer to the issue - what did the court decide?]</textarea>
+                <p class="hint">Direct answer to the issue</p>
             </div>
         </div>
         
@@ -163,129 +227,61 @@ The judge's unchallenged findings demonstrated that the defendant had violated a
         <div class="form-section">
             <div class="section-header">Rule of Law</div>
             <div class="section-content">
-                <div class="form-group full-width">
-                    <label for="rule">Legal Principle(s)</label>
-                    <textarea id="rule" name="rule" class="large">Trust, Constructive trust. Fiduciary.
-
-In an action between two unmarried persons who had formerly lived together as if husband and wife, wherein the plaintiff sought to establish her interest in a certain house, title to which was held by the husband alone, the judge's unchallenged findings demonstrating that the defendant had violated a fiduciary duty to the plaintiff called for the imposition of a constructive trust, in her favor, of a one-half interest in the house.</textarea>
-                    <p class="hint">This is the binding precedent established by this case</p>
-                </div>
+                <label for="rule">Legal principle established or applied</label>
+                <textarea id="rule" name="rule" class="large">[The broader legal rule from this case - how will this case be cited in the future?]</textarea>
+                <p class="hint">The broader legal rule from this case</p>
             </div>
         </div>
         
-        <!-- Reasoning/Rationale -->
+        <!-- Reasoning -->
         <div class="form-section">
-            <div class="section-header">Reasoning / Rationale</div>
+            <div class="section-header">Reasoning</div>
             <div class="section-content">
-                <div class="form-group full-width">
-                    <label for="reasoning">Court's Analysis</label>
-                    <textarea id="reasoning" name="reasoning" class="large">[Key arguments, precedent cited, policy considerations, statutory interpretation]</textarea>
-                    <p class="hint">This is often the longest section - explain the court's logic step by step</p>
-                </div>
+                <label for="reasoning">Court's analysis and rationale</label>
+                <textarea id="reasoning" name="reasoning" class="large">[Key arguments, precedent cited, policy considerations, statutory interpretation]</textarea>
+                <p class="hint">Key arguments, precedent cited, policy considerations</p>
             </div>
         </div>
         
-        <!-- Concurring & Dissenting Opinions -->
+        <!-- Concurring/Dissenting Opinions -->
         <div class="form-section">
-            <div class="section-header">Concurring &amp; Dissenting Opinions</div>
+            <div class="section-header">Concurring / Dissenting Opinions</div>
             <div class="section-content">
-                <div class="form-group full-width">
-                    <label for="concurrence">Concurring Opinion(s)</label>
-                    <textarea id="concurrence" name="concurrence">[If applicable - key points from concurring justices]</textarea>
-                </div>
-                <div class="form-group full-width" style="margin-top: 15px;">
-                    <label for="dissent">Dissenting Opinion(s)</label>
-                    <textarea id="dissent" name="dissent">[If applicable - key points from dissenting justices]</textarea>
-                </div>
+                <label for="concurring">Other significant opinions</label>
+                <textarea id="concurring" name="concurring">[If applicable - key points from concurring or dissenting justices]</textarea>
+                <p class="hint">Key points from other justices</p>
             </div>
         </div>
         
-        <!-- Analysis & Significance -->
+        <!-- Key Quotes -->
         <div class="form-section">
-            <div class="section-header">Analysis &amp; Significance</div>
+            <div class="section-header">Key Quotes</div>
             <div class="section-content">
-                <div class="form-group full-width">
-                    <label for="significance">Importance &amp; Impact</label>
-                    <textarea id="significance" name="significance" class="large">[Why this case matters, how it's been used, related cases, practical implications]</textarea>
-                </div>
-                <div class="form-group full-width" style="margin-top: 15px;">
-                    <label for="notes">Additional Notes</label>
-                    <textarea id="notes" name="notes">Source: Caselaw Access Project (CAP), Harvard Law School Library Innovation Lab
-Generated: 2026-03-11
-Citation: 404 Mass. 160</textarea>
-                </div>
+                <label for="quotes">Notable language from the opinion</label>
+                <textarea id="quotes" name="quotes" class="large">[Direct quotes that capture the holding, reasoning, or rule of law]</textarea>
+                <p class="hint">Direct quotes that capture the holding or reasoning</p>
             </div>
         </div>
         
-        <!-- Action Buttons -->
-        <div class="button-row">
-            <button class="print-btn" onclick="casebriefrPDF.print()">Print / Save as PDF</button>
-            <button class="submit-btn" onclick="casebriefrPDF.submitToDBrief()">Submit to d-Brief</button>
+        <!-- Notes -->
+        <div class="form-section">
+            <div class="section-header">Notes & Significance</div>
+            <div class="section-content">
+                <label for="notes">Your analysis and case importance</label>
+                <textarea id="notes" name="notes" class="large">[Why this case matters, how it's been used, related cases, practical implications]</textarea>
+                <p class="hint">Why this case matters, how it's been used, related cases</p>
+            </div>
         </div>
         
-        <div class="brand-footer">
-            Created with Casebriefr — casebriefr.com
+        <div class="button-group screen-only">
+            <button type="button" class="btn-print" onclick="window.print()">Print Brief</button>
         </div>
         
-        <!-- Print-Only Content -->
-        <div class="print-only" id="print-container">
-            <div class="print-header">
-                <div class="print-case-name" id="print-case-name">Sullivan v. Rooney</div>
-                <div class="print-case-meta">
-                    <span id="print-citation">404 Mass. 160 (1989)</span>
-                    <span id="print-court">Massachusetts Supreme Judicial Court</span>
-                    <span id="print-date">February 16, 1989</span>
-                </div>
-                <div class="print-briefed-by" id="print-briefed-by">Briefed by: Zoe</div>
-            </div>
-            
-            <div class="print-section">
-                <div class="print-section-title">Facts</div>
-                <div class="print-content" id="print-facts">[Extract key facts from the case text that led to the legal dispute]
-
-This case involves an action between two unmarried persons who had formerly lived together as if husband and wife. The plaintiff sought to establish her interest in a certain house, title to which was held by the defendant alone.
-
-See full case text for complete facts.</div>
-            </div>
-            
-            <div class="print-section">
-                <div class="print-section-title">Procedural History</div>
-                <div class="print-content" id="print-procedural-history">Civil action commenced in the Middlesex Division of the Probate & Family Court Department on October 4, 1984.
-
-The judge's unchallenged findings demonstrated that the defendant had violated a fiduciary duty to the plaintiff, which called for the imposition of a constructive trust in her favor of a one-half interest in the house.</div>
-            </div>
-            
-            <div class="print-section">
-                <div class="print-section-title">Issue(s)</div>
-                <div class="print-content" id="print-issues">[Frame as question(s) - e.g., "Whether the defendant's violation of fiduciary duty warrants imposition of a constructive trust..."]</div>
-            </div>
-            
-            <div class="print-section">
-                <div class="print-section-title">Holding</div>
-                <div class="print-content" id="print-holding">[Direct answer to the issue - what did the court decide?]</div>
-            </div>
-            
-            <div class="print-section">
-                <div class="print-section-title">Rule of Law</div>
-                <div class="print-content" id="print-rule">Trust, Constructive trust. Fiduciary.
-
-In an action between two unmarried persons who had formerly lived together as if husband and wife, wherein the plaintiff sought to establish her interest in a certain house, title to which was held by the husband alone, the judge's unchallenged findings demonstrating that the defendant had violated a fiduciary duty to the plaintiff called for the imposition of a constructive trust, in her favor, of a one-half interest in the house.</div>
-            </div>
-            
-            <div class="print-section">
-                <div class="print-section-title">Reasoning / Rationale</div>
-                <div class="print-content" id="print-reasoning">[Key arguments, precedent cited, policy considerations, statutory interpretation]</div>
-            </div>
-            
-            <div class="print-section" id="print-notes-section">
-                <div class="print-section-title">Additional Notes</div>
-                <div class="print-content" id="print-notes">Source: Caselaw Access Project (CAP), Harvard Law School Library Innovation Lab
-Generated: 2026-03-11
-Citation: 404 Mass. 160</div>
-            </div>
+        <div class="source-note">
+            <strong>Source:</strong> Caselaw Access Project (CAP), Harvard Law School Library Innovation Lab<br>
+            <strong>Generated:</strong> 2026-03-11 16:20:28<br>
+            <strong>Citation:</strong> 404 Mass. 160
         </div>
     </div>
-    
-    <script src="js/pdf-generator.js"></script>
 </body>
 </html>
