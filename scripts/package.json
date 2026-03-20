@@ -1,5 +1,5 @@
 {
-  "name": "d-briefs-build",
+  "name": "dbriefr-build",
   "version": "1.0.0",
   "description": "Build script for d-Briefs gallery",
   "main": "build-gallery.js",

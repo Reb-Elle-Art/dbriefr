@@ -2,7 +2,7 @@
 type: readme
 created: 2026-03-17
 modified: 2026-03-17
-project: d-briefs
+project: dbriefr
 ---
 
 # d-Briefs
@@ -23,7 +23,7 @@ d-Briefs is a showcase for legal case briefs created with Casebriefr. Browse bri
 - `index.html` — Homepage
 - `gallery.html` — Browse all briefs
 - `brief-viewer.html` — View individual briefs
-- `d-briefs-archive/` — Brief files (HTML/Markdown)
+- `dbriefr-archive/` — Brief files (HTML/Markdown)
 - `scripts/` — Gallery generation scripts
 
 ---
