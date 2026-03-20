@@ -9,7 +9,7 @@ project: d-briefs
 
 **A curated gallery of legal case briefs.**
 
-🌐 **Live site:** https://d-briefs.com  
+🌐 **Live site:** https://dbriefr.com  
 📁 **Planning:** `p-dbriefs/`
 
 ---
