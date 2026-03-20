@@ -9,6 +9,15 @@
     "filename": "test.html"
   },
   {
+    "id": "test-unicode-v-example-2026-03-20",
+    "citation": "2026 Test 456",
+    "caseName": "Test Unicode v. Example",
+    "court": "Unicode Court",
+    "snippet": "Test with special characters and Unicode.",
+    "dateAdded": "2026-03-20",
+    "filename": "Test-Unicode-v-Example-2026-03-20.html"
+  },
+  {
     "id": "united-states-v-ilario-ma-zannino",
     "citation": "895 F.2d 1, 106 A.L.R. Fed. 1, 29 Fed. R. Serv. 838, 1990 WL 965, 1990 U.S. App. LEXIS 336",
     "caseName": "United States v. Ilario M.A. Zannino",
